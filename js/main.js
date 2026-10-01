@@ -29,7 +29,7 @@ function setHeroSlide(index) {
     }
   }
 
-  // Update Indicator Bars (Antigravity Blue #1a73e8 - NO PILLS)
+  // Update Indicator Bars
   const dots = document.querySelectorAll('.hero-dot');
   dots.forEach((dot, idx) => {
     if (idx === index) {
@@ -85,7 +85,7 @@ function toggleMobileMenu() {
   }
 }
 
-// PORTFOLIO FILTER TABS (NO PILLS)
+// PORTFOLIO FILTER TABS
 function filterPortfolio(category) {
   const items = document.querySelectorAll('.portfolio-item');
   const tabs = document.querySelectorAll('.portfolio-tab');
