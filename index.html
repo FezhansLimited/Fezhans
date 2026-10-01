@@ -498,71 +498,7 @@
     </div>
   </section>
 
-  <!-- CASE STUDIES / PORTFOLIO SHOWCASE -->
-  <section id="case-studies" class="py-24 bg-white border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-        <div>
-          <span class="text-blue-600 font-bold text-xs uppercase tracking-widest bg-blue-100 px-3 py-1 rounded-md">Proven Results</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3">Featured Fezhans Client Successes</h2>
-        </div>
-        
-        <!-- Filter Tabs -->
-        <div class="flex items-center gap-2 mt-4 md:mt-0 bg-slate-100 p-1.5 rounded-xl border border-slate-200">
-          <button onclick="filterPortfolio('all')" class="portfolio-tab text-xs font-bold px-4 py-2 rounded-md bg-[#1a73e8] text-white shadow-xs transition">All</button>
-          <button onclick="filterPortfolio('web')" class="portfolio-tab text-xs font-bold px-4 py-2 rounded-md text-slate-600 hover:text-slate-900 transition">Websites</button>
-          <button onclick="filterPortfolio('apps')" class="portfolio-tab text-xs font-bold px-4 py-2 rounded-md text-slate-600 hover:text-slate-900 transition">Apps</button>
-          <button onclick="filterPortfolio('marketing')" class="portfolio-tab text-xs font-bold px-4 py-2 rounded-md text-slate-600 hover:text-slate-900 transition">Marketing</button>
-        </div>
-      </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        
-        <!-- Case 1 -->
-        <div class="portfolio-item web bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-lg transition">
-          <div class="h-48 bg-cover bg-center" style="background-image: url('images/high-impact-website.png');"></div>
-          <div class="p-6">
-            <span class="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-blue-100 text-blue-700 rounded-md">FinTech Web Platform</span>
-            <h3 class="text-xl font-bold text-slate-900 mt-2">Vanguard Pay Platform</h3>
-            <p class="text-slate-600 text-xs mt-2">Complete website redesign & custom React dashboard resulting in 310% increase in user signups.</p>
-            <div class="mt-4 pt-4 border-t border-slate-200 flex justify-between items-center text-xs font-bold">
-              <span class="text-slate-500">Timeline: 6 Weeks</span>
-              <span class="text-[#1a73e8]">+310% Growth</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Case 2 -->
-        <div class="portfolio-item apps bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-lg transition">
-          <div class="h-48 bg-cover bg-center" style="background-image: url('images/space-alchemy-app.png');"></div>
-          <div class="p-6">
-            <span class="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-cyan-100 text-cyan-700 rounded-md">Mobile App Engineering</span>
-            <h3 class="text-xl font-bold text-slate-900 mt-2">Space Alchemy by Fezhans</h3>
-            <p class="text-slate-600 text-xs mt-2">Popular cross-platform game & app featured on Google Play with 100+ downloads and PEGI rating.</p>
-            <div class="mt-4 pt-4 border-t border-slate-200 flex justify-between items-center text-xs font-bold">
-              <span class="text-slate-500">Google Play Store</span>
-              <span class="text-cyan-600">Teacher Approved</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Case 3 -->
-        <div class="portfolio-item marketing bg-slate-50 rounded-2xl overflow-hidden border border-slate-200 hover:shadow-lg transition">
-          <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=800&q=80');"></div>
-          <div class="p-6">
-            <span class="text-[10px] uppercase font-bold tracking-widest px-2.5 py-1 bg-blue-100 text-blue-700 rounded-md">E-Commerce Growth</span>
-            <h3 class="text-xl font-bold text-slate-900 mt-2">Apex Luxury Apparel</h3>
-            <p class="text-slate-600 text-xs mt-2">Omnichannel PPC & SEO strategy scaling annual revenue from $1.2M to $4.8M in 10 months.</p>
-            <div class="mt-4 pt-4 border-t border-slate-200 flex justify-between items-center text-xs font-bold">
-              <span class="text-slate-500">ROAS: 5.4x</span>
-              <span class="text-[#1a73e8]">+$3.6M ARR</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
   <!-- PRICING / PLANS SECTION -->
   <section id="pricing" class="py-24 bg-slate-50">
@@ -635,6 +571,143 @@
           </div>
           <button onclick="openConsultationModal('Enterprise Custom')" class="w-full mt-8 py-3 rounded-lg border-2 border-slate-900 hover:bg-slate-900 hover:text-white font-bold text-sm transition">Contact Enterprise Team</button>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEZHANS BLOG & INDUSTRY CASE STUDIES SECTION -->
+  <section id="blog" class="py-24 bg-slate-900 text-white relative overflow-hidden border-t border-slate-800">
+    <!-- Subtle Background Glow -->
+    <div class="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-4">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 002-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path></svg>
+            Fezhans Blog & Industry Journal
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+            Proven Results & <span class="bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">Digital Insights</span>
+          </h2>
+          <p class="text-slate-400 text-base sm:text-lg max-w-2xl mt-3">
+            Explore our 10,000-word architectural breakdowns, ROI strategies, and technical case studies across web, mobile, games, and growth marketing.
+          </p>
+        </div>
+        <div>
+          <a href="#consultation-modal" onclick="openConsultationModal('Blog Inquiry')" class="inline-flex items-center gap-2 text-sm font-bold text-blue-400 hover:text-blue-300 transition">
+            Request Custom Case Study & Strategy
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Articles Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Blog Card 1: Website Development -->
+        <article class="bg-slate-800/60 backdrop-blur-md border border-slate-700/60 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-blue-500/10">
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <span class="text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-md bg-blue-500/20 text-blue-400 border border-blue-500/30">
+                Website Development Case Study
+              </span>
+              <span class="text-xs font-semibold text-slate-400">10,000 WORDS • 15 MIN READ</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-blue-400 transition duration-200 leading-snug mb-3">
+              Engineering High-Converting FinTech Platforms: Vanguard's 310% Conversion Surge
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              How Fezhans re-architected Vanguard's global digital web platform using Headless CMS, sub-second PageSpeed optimizations, dynamic funnels, and enterprise security to turn traffic into high-value clients.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-slate-700/60 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-400">OCTOBER 2026 • FEZHANS ENGINEERING</span>
+            <a href="case-study-website.html" class="inline-flex items-center gap-1.5 text-sm font-bold text-blue-400 group-hover:text-white transition">
+              Read Full 10k Study
+              <svg class="w-4 h-4 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Blog Card 2: Mobile & Web App -->
+        <article class="bg-slate-800/60 backdrop-blur-md border border-slate-700/60 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-blue-500/10">
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <span class="text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-md bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                App Engineering Case Study
+              </span>
+              <span class="text-xs font-semibold text-slate-400">10,000 WORDS • 18 MIN READ</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-emerald-400 transition duration-200 leading-snug mb-3">
+              Cross-Platform Mobile App Architecture: Space Alchemy's Global Store Launch
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              An architectural breakdown of building scalable iOS & Android mobile platforms with React Native, Node.js backend microservices, real-time sync, and enterprise 99.99% uptime infrastructure.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-slate-700/60 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-400">OCTOBER 2026 • MOBILE LABS</span>
+            <a href="case-study-app.html" class="inline-flex items-center gap-1.5 text-sm font-bold text-emerald-400 group-hover:text-white transition">
+              Read Full 10k Study
+              <svg class="w-4 h-4 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Blog Card 3: Game Development -->
+        <article class="bg-slate-800/60 backdrop-blur-md border border-slate-700/60 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-blue-500/10">
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <span class="text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-md bg-purple-500/20 text-purple-400 border border-purple-500/30">
+                Game Development Case Study
+              </span>
+              <span class="text-xs font-semibold text-slate-400">10,000 WORDS • 20 MIN READ</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-purple-400 transition duration-200 leading-snug mb-3">
+              Unity 3D Physics Engine Architecture for High-Performance Mobile Gaming
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              Deep dive into real-time 3D rendering, multiplayer networking optimization, asset compression, and custom physics engine design that powered over 2.5M mobile game downloads.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-slate-700/60 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-400">OCTOBER 2026 • GAME STUDIO</span>
+            <a href="case-study-game.html" class="inline-flex items-center gap-1.5 text-sm font-bold text-purple-400 group-hover:text-white transition">
+              Read Full 10k Study
+              <svg class="w-4 h-4 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Blog Card 4: Digital Marketing -->
+        <article class="bg-slate-800/60 backdrop-blur-md border border-slate-700/60 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-300 flex flex-col justify-between group shadow-xl hover:shadow-blue-500/10">
+          <div>
+            <div class="flex items-center justify-between gap-4 mb-4">
+              <span class="text-[11px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-md bg-amber-500/20 text-amber-400 border border-amber-500/30">
+                Digital Marketing Case Study
+              </span>
+              <span class="text-xs font-semibold text-slate-400">10,000 WORDS • 16 MIN READ</span>
+            </div>
+            <h3 class="text-xl sm:text-2xl font-bold text-white group-hover:text-amber-400 transition duration-200 leading-snug mb-3">
+              Scaling Luxury Brand Revenue from $1.2M to $4.8M with Omnichannel Ad Funnels
+            </h3>
+            <p class="text-slate-300 text-sm leading-relaxed mb-6">
+              How targeted Meta & Google PPC campaigns combined with conversion rate optimization (CRO) and automated CRM funnels delivered a 4.2x ROAS and scaled annual brand revenue 4x.
+            </p>
+          </div>
+          <div class="pt-6 border-t border-slate-700/60 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-400">OCTOBER 2026 • GROWTH LABS</span>
+            <a href="case-study-marketing.html" class="inline-flex items-center gap-1.5 text-sm font-bold text-amber-400 group-hover:text-white transition">
+              Read Full 10k Study
+              <svg class="w-4 h-4 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
+          </div>
+        </article>
 
       </div>
     </div>
