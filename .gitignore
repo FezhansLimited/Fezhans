@@ -1,0 +1,6 @@
+# Dependencies & Environment
+.DS_Store
+Thumbs.db
+node_modules/
+.vercel
+*.log

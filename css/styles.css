@@ -1,0 +1,42 @@
+/* Custom Styles for Fezhans Agency Website - Antigravity Electric Blue Theme */
+@layer utilities {
+  .hero-bg-slide {
+    transition: opacity 1s ease-in-out;
+  }
+}
+
+/* Custom Smooth Transitions */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar - Antigravity Blue (#1a73e8) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a73e8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1557b0;
+}
+
+/* Hero Carousel Animation */
+.hero-text-slide {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
