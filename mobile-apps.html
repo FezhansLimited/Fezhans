@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Apps | Fezhans Digital Agency</title>
+  <meta name="description" content="Custom iOS and Android mobile app development engineered for high performance, engagement, and scalability by Fezhans.">
+  <link rel="icon" type="image/png" href="images/fezhans-logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-500 selection:text-white">
+
+  <!-- NAVIGATION HEADER -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-3.5 group">
+        <img src="images/fezhans-logo.png" alt="Fezhans Logo" class="w-14 h-14 object-contain group-hover:scale-105 transition duration-200">
+        <div class="flex flex-col">
+          <span class="text-2xl font-black text-slate-900 group-hover:text-[#1a73e8] transition duration-200 tracking-tight">Fezhans</span>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-[#1a73e8] -mt-1">Digital Agency</span>
+        </div>
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-semibold text-slate-700">
+        <a href="index.html" class="hover:text-[#1a73e8] transition">Home</a>
+        <a href="websites.html" class="hover:text-[#1a73e8] transition">Websites</a>
+        <a href="mobile-apps.html" class="text-[#1a73e8] font-bold border-b-2 border-[#1a73e8] pb-1">Mobile Apps</a>
+        <a href="marketing.html" class="hover:text-[#1a73e8] transition">Marketing</a>
+        <a href="accessories.html" class="hover:text-[#1a73e8] transition">Accessories</a>
+      </nav>
+
+      <!-- CTA BUTTONS -->
+      <div class="hidden sm:flex items-center gap-4">
+        <button onclick="openConsultationModal('Mobile Apps')" class="px-5 py-2.5 rounded-lg bg-[#1a73e8] hover:bg-[#1557b0] text-white font-bold text-sm shadow-md transition">
+          Get Started
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="bg-slate-950 text-white py-20 lg:py-28 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6">
+          <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-wider">
+            iOS & Android Mobile Applications
+          </span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            Mobile Apps Engineered <br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-cyan-200">For Massive Scale.</span>
+          </h1>
+          <p class="text-slate-300 text-lg leading-relaxed max-w-xl">
+            From intuitive UI/UX design to robust cloud backends, Fezhans builds custom mobile applications that users love and businesses rely on.
+          </p>
+          <div class="pt-4 flex flex-wrap gap-4">
+            <button onclick="openConsultationModal('Mobile Apps')" class="px-7 py-3.5 rounded-lg bg-[#1a73e8] hover:bg-[#1557b0] text-white font-bold text-sm shadow-lg transition transform hover:scale-[1.02]">
+              Build Your Custom App
+            </button>
+            <a href="index.html#reviews" class="px-7 py-3.5 rounded-lg border border-slate-700 text-white hover:bg-white/10 font-semibold text-sm transition">
+              View Verified Case Studies
+            </a>
+          </div>
+        </div>
+
+        <div class="lg:col-span-5">
+          <div class="bg-slate-900 p-3 rounded-2xl border border-slate-800 shadow-2xl">
+            <img src="images/space-alchemy-app.png" alt="Mobile App Showcase" class="rounded-xl w-full object-cover">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES & CAPABILITIES -->
+  <section class="py-20 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">Full Lifecycle Mobile App Engineering</h2>
+        <p class="text-slate-600 text-lg mt-3">We build native and cross-platform applications with fluid 60fps animations, bulletproof security, and offline support.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+          <div class="w-12 h-12 rounded-lg bg-blue-100 text-[#1a73e8] flex items-center justify-center font-bold text-xl">📱</div>
+          <h3 class="text-xl font-bold text-slate-900">iOS & Android Solutions</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Built using React Native, Flutter, or native Swift/Kotlin for peak performance across Apple and Google ecosystems.</p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+          <div class="w-12 h-12 rounded-lg bg-blue-100 text-[#1a73e8] flex items-center justify-center font-bold text-xl">☁️</div>
+          <h3 class="text-xl font-bold text-slate-900">Real-Time Cloud Backends</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Scalable REST APIs, GraphQL, push notifications, and payment gateways integrated with Firebase & AWS.</p>
+        </div>
+
+        <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+          <div class="w-12 h-12 rounded-lg bg-blue-100 text-[#1a73e8] flex items-center justify-center font-bold text-xl">🚀</div>
+          <h3 class="text-xl font-bold text-slate-900">App Store Deployment</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">End-to-end guidance for Apple App Store & Google Play Store submission, compliance, and App Store Optimization (ASO).</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION BANNER -->
+  <section class="py-16 bg-[#1a73e8] text-white">
+    <div class="max-w-5xl mx-auto px-4 text-center space-y-6">
+      <h2 class="text-3xl sm:text-4xl font-extrabold">Have a mobile app idea ready to build?</h2>
+      <p class="text-blue-100 text-lg max-w-2xl mx-auto">Get an app architecture blueprint and consultation from our lead engineers.</p>
+      <button onclick="openConsultationModal('Mobile Apps')" class="px-8 py-4 rounded-lg bg-white text-[#1a73e8] hover:bg-slate-100 font-bold text-base shadow-xl transition transform hover:scale-[1.02]">
+        Schedule App Strategy Call
+      </button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <img src="images/fezhans-logo.png" alt="Fezhans Logo" class="w-10 h-10 object-contain">
+        <span class="text-white font-bold text-base">Fezhans Digital Agency</span>
+      </div>
+      <div class="flex flex-wrap gap-6 font-semibold">
+        <a href="index.html" class="hover:text-white">Home</a>
+        <a href="websites.html" class="hover:text-white">Websites</a>
+        <a href="mobile-apps.html" class="text-white">Mobile Apps</a>
+        <a href="marketing.html" class="hover:text-white">Marketing</a>
+        <a href="accessories.html" class="hover:text-white">Accessories</a>
+      </div>
+      <p>© 2026 Fezhans Limited. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- CONSULTATION MODAL -->
+  <div id="consultation-modal" class="fixed inset-0 z-50 bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+    <div class="bg-white rounded-2xl max-w-md w-full p-6 relative text-slate-900 shadow-2xl">
+      <button onclick="closeConsultationModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-800">✕</button>
+      <h3 class="text-xl font-bold mb-1">Request Mobile App Consultation</h3>
+      <p class="text-xs text-slate-500 mb-4">Leave your details and our lead mobile developer will reach out to you.</p>
+      <form onsubmit="event.preventDefault(); alert('Thank you! Fezhans will contact you shortly.'); closeConsultationModal();" class="space-y-3">
+        <input type="text" required placeholder="Your Name" class="w-full px-3 py-2 border rounded-lg text-xs">
+        <input type="email" required placeholder="Work Email" class="w-full px-3 py-2 border rounded-lg text-xs">
+        <input type="tel" placeholder="Phone Number (Optional)" class="w-full px-3 py-2 border rounded-lg text-xs">
+        <button type="submit" class="w-full py-3 rounded-lg bg-[#1a73e8] text-white font-bold text-xs hover:bg-[#1557b0] transition">Submit Request</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openConsultationModal(service) { document.getElementById('consultation-modal').classList.remove('hidden'); }
+    function closeConsultationModal() { document.getElementById('consultation-modal').classList.add('hidden'); }
+  </script>
+
+</body>
+</html>
