@@ -377,11 +377,11 @@
     </div>
   </section>
 
-  <!-- INTERACTIVE DRINK EXPERIENCE SECTION ("AS COMPLEX AS YOU SCROLL") -->
+  <!-- INTERACTIVE 3D DRINK EXPERIENCE SECTION ("AS COMPLEX AS YOU SCROLL") -->
   <section id="drink-experience" class="relative bg-slate-950 text-white overflow-hidden min-h-screen flex items-center justify-center py-20 border-b border-slate-800 select-none">
     
     <!-- CANVAS BACKGROUND PARTICLES -->
-    <canvas id="drink-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
+    <canvas id="drink-bg-canvas" class="absolute inset-0 w-full h-full pointer-events-none z-0"></canvas>
     
     <!-- GRADIENT OVERLAYS -->
     <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-transparent to-slate-950 opacity-90 z-0"></div>
@@ -390,10 +390,10 @@
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
       <div class="grid lg:grid-cols-12 gap-12 items-center">
         
-        <!-- LEFT TEXT & SCROLL COMPLEXITY CONTROLS -->
-        <div class="lg:col-span-6 space-y-8">
+        <!-- LEFT CONTENT (Minimalist & High-Impact) -->
+        <div class="lg:col-span-5 space-y-6 text-center lg:text-left">
           
-          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-blue-500/10 border border-blue-500/30 text-[#38bdf8] text-xs font-bold uppercase tracking-widest backdrop-blur-md">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-md bg-blue-500/10 border border-blue-500/30 text-[#38bdf8] text-xs font-extrabold uppercase tracking-widest backdrop-blur-md">
             <span class="w-2 h-2 rounded-xs bg-[#38bdf8] animate-ping"></span>
             FEZHANS BLUE ALCHEMY DRINK
           </div>
@@ -401,119 +401,38 @@
           <div class="space-y-4">
             <h2 class="text-4xl sm:text-6xl font-black tracking-tight text-white leading-none">
               AS COMPLEX AS <br>
-              <span id="scroll-complexity-text" class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-cyan-200 transition-all duration-300">
+              <span id="scroll-complexity-text" class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-sky-300 to-cyan-200">
                 YOU SCROLL DOWN
               </span>
             </h2>
-            <p class="text-slate-400 text-base sm:text-lg max-w-lg leading-relaxed">
-              Experience the world's first adaptive hyper-hydrating beverage engineered by Fezhans. As you scroll, watch the quantum liquid matrix mutate flavor profiles in real-time.
+            <p class="text-slate-400 text-base sm:text-lg max-w-md mx-auto lg:mx-0 leading-relaxed font-medium">
+              The world's first adaptive hyper-hydrating energy beverage. Engineered with real cold-condensation liquid matrix by Fezhans.
             </p>
           </div>
 
-          <!-- COMPLEXITY INDEX METER & FLAVOR CONTROLS -->
-          <div class="bg-slate-900/80 backdrop-blur-xl border border-slate-800 rounded-2xl p-6 space-y-5 shadow-2xl">
-            
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-extrabold uppercase tracking-widest text-slate-400">Formula Complexity Level</span>
-              <span id="complexity-percentage" class="text-xl font-black text-[#38bdf8] font-mono">15%</span>
-            </div>
-
-            <!-- DYNAMIC PROGRESS BAR -->
-            <div class="w-full h-3 bg-slate-950 rounded-full overflow-hidden p-0.5 border border-slate-800">
-              <div id="complexity-bar" class="h-full bg-gradient-to-r from-[#1a73e8] via-[#38bdf8] to-cyan-300 rounded-full transition-all duration-150 shadow-lg shadow-blue-500/50" style="width: 15%;"></div>
-            </div>
-
-            <!-- LIVE STATS GRID -->
-            <div class="grid grid-cols-3 gap-4 text-center pt-2">
-              <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/60">
-                <p class="text-[10px] uppercase font-bold text-slate-500">Carbonation</p>
-                <p id="stat-carbonation" class="text-sm font-black text-white mt-1 font-mono">2.4 ATM</p>
-              </div>
-              <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/60">
-                <p class="text-[10px] uppercase font-bold text-slate-500">Quantum Ion</p>
-                <p id="stat-ion" class="text-sm font-black font-mono text-[#38bdf8] mt-1">98.4%</p>
-              </div>
-              <div class="bg-slate-950/60 p-3 rounded-xl border border-slate-800/60">
-                <p class="text-[10px] uppercase font-bold text-slate-500">Electrolytes</p>
-                <p id="stat-electrolytes" class="text-sm font-black text-cyan-300 mt-1 font-mono">1,450 mg</p>
-              </div>
-            </div>
-
-            <!-- INTERACTIVE FLAVOR MATRIX BUTTONS -->
-            <div class="pt-2">
-              <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Select Flavor Fusion Profile:</p>
-              <div class="flex flex-wrap gap-2">
-                <button onclick="setDrinkFlavor('blue')" class="flavor-btn px-4 py-2 rounded-lg bg-[#1a73e8] text-white text-xs font-bold hover:bg-blue-600 transition shadow-md">
-                  NEON BLUEBERRY
-                </button>
-                <button onclick="setDrinkFlavor('citrus')" class="flavor-btn px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition border border-slate-700">
-                  QUANTUM CITRUS
-                </button>
-                <button onclick="setDrinkFlavor('cyber')" class="flavor-btn px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition border border-slate-700">
-                  ELECTRIC CYBERBERRY
-                </button>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="flex items-center gap-4">
-            <button onclick="openConsultationModal('Blue Alchemy Drink')" class="px-8 py-4 rounded-lg bg-[#1a73e8] hover:bg-[#1557b0] text-white font-black uppercase text-xs tracking-wider shadow-xl shadow-blue-500/25 transition transform hover:scale-[1.02] active:scale-100 flex items-center gap-3">
+          <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <button onclick="openConsultationModal('Blue Alchemy Energy Drink')" class="px-8 py-4 rounded-lg bg-[#1a73e8] hover:bg-[#1557b0] text-white font-black uppercase text-xs tracking-wider shadow-xl shadow-blue-500/25 transition transform hover:scale-[1.03] active:scale-100 flex items-center gap-3">
               <span>ORDER BLUE ALCHEMY CASE</span>
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
             </button>
           </div>
 
+          <!-- Interaction Hint -->
+          <p class="text-[11px] font-bold text-slate-500 uppercase tracking-widest pt-2">
+            ↓ Scroll down or drag can to rotate 360°
+          </p>
+
         </div>
 
-        <!-- RIGHT 3D INTERACTIVE CAN DISPLAY CANVAS / GRAPHICS -->
-        <div class="lg:col-span-6 flex justify-center relative">
+        <!-- RIGHT 3D ENERGY DRINK CAN VIEWPORT -->
+        <div class="lg:col-span-7 flex items-center justify-center relative min-h-[500px] sm:min-h-[600px]">
           
-          <!-- ORBITAL GLOW RINGS -->
-          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div id="glow-ring-1" class="w-72 h-72 sm:w-96 sm:h-96 rounded-full border border-blue-500/20 animate-spin-slow"></div>
-            <div id="glow-ring-2" class="absolute w-80 h-80 sm:w-[420px] sm:h-[420px] rounded-full border border-cyan-400/10 border-dashed animate-spin-reverse"></div>
-          </div>
-
-          <!-- 3D CAN CONTAINER -->
-          <div id="can-container" class="relative z-10 w-72 h-[460px] sm:w-80 sm:h-[500px] bg-gradient-to-b from-slate-900 via-blue-950/80 to-slate-900 rounded-[48px] p-6 border border-blue-500/30 shadow-2xl flex flex-col justify-between items-center transform transition duration-500 hover:scale-105 cursor-grab active:cursor-grabbing group">
-            
-            <!-- CAN TOP CAP -->
-            <div class="w-36 h-6 bg-gradient-to-r from-slate-400 via-slate-200 to-slate-400 rounded-full border-b border-slate-500 shadow-inner flex items-center justify-center">
-              <div class="w-16 h-2 bg-slate-700/60 rounded-full"></div>
-            </div>
-
-            <!-- CAN BRANDING BODY -->
-            <div class="w-full flex-1 my-4 bg-gradient-to-b from-blue-600 via-sky-600 to-blue-900 rounded-3xl p-6 flex flex-col justify-between items-center text-center shadow-2xl relative overflow-hidden border border-blue-400/40">
-              
-              <!-- LIQUID BUBBLE EFFECT OVERLAY -->
-              <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,_rgba(56,189,248,0.5),_transparent_70%)] pointer-events-none"></div>
-
-              <!-- CAN TOP BRAND -->
-              <div class="z-10 flex items-center gap-2">
-                <img src="images/fezhans-logo.png" class="w-6 h-6 object-contain">
-                <span class="text-[11px] font-black uppercase tracking-widest text-white">FEZHANS</span>
-              </div>
-
-              <!-- CAN MAIN CENTER EMBLEM -->
-              <div class="z-10 my-auto space-y-1">
-                <span class="text-[10px] font-extrabold uppercase tracking-widest text-cyan-200 bg-blue-950/60 px-3 py-1 rounded-full border border-cyan-400/30">ZERO SUGAR</span>
-                <h3 class="text-3xl font-black tracking-tighter text-white drop-shadow-md">BLUE</h3>
-                <h4 class="text-xl font-extrabold tracking-widest text-sky-200 uppercase">ALCHEMY</h4>
-                <p id="can-flavor-label" class="text-[10px] font-bold tracking-widest text-white/90 uppercase mt-2">NEON BLUEBERRY</p>
-              </div>
-
-              <!-- CAN FOOTER -->
-              <div class="z-10 w-full pt-3 border-t border-white/20 flex justify-between items-center text-[9px] font-bold text-sky-100 tracking-wider">
-                <span>355 ML</span>
-                <span>COMPLEXITY <span id="can-complexity-stat">15%</span></span>
-                <span>NUTRITION ★</span>
-              </div>
-            </div>
-
-            <!-- CAN BOTTOM BASE -->
-            <div class="w-36 h-5 bg-gradient-to-r from-slate-400 via-slate-300 to-slate-400 rounded-full border-t border-slate-500 shadow-inner"></div>
-
+          <!-- CYBER GLOW BACKLIGHTING -->
+          <div class="absolute w-80 h-80 sm:w-[450px] sm:h-[450px] bg-blue-600/30 rounded-full blur-[100px] pointer-events-none"></div>
+          
+          <!-- THREE.JS CANVAS CONTAINER -->
+          <div id="three-can-wrapper" class="relative w-full h-[500px] sm:h-[600px] flex items-center justify-center cursor-grab active:cursor-grabbing">
+            <canvas id="three-can-canvas" class="w-full h-full object-contain"></canvas>
           </div>
 
         </div>
@@ -779,13 +698,16 @@
     </div>
   <script src="js/main.js"></script>
 
-  <!-- DRINK EXPERIENCE SCROLL & ANIMATION SCRIPT -->
+  <!-- THREE.JS LIBRARY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- 3D ENERGY DRINK CAN WEBGL & SCROLL SPIN SCRIPT -->
   <script>
-    (function() {
-      const canvas = document.getElementById('drink-canvas');
+    // 1. Background Carbonation Particles
+    (function initDrinkBg() {
+      const canvas = document.getElementById('drink-bg-canvas');
       if (!canvas) return;
       const ctx = canvas.getContext('2d');
-      
       let width = canvas.width = canvas.offsetWidth;
       let height = canvas.height = canvas.offsetHeight;
 
@@ -795,22 +717,20 @@
         height = canvas.height = canvas.offsetHeight;
       });
 
-      // Bubble Particles
       const particles = [];
-      for (let i = 0; i < 60; i++) {
+      for (let i = 0; i < 50; i++) {
         particles.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          radius: Math.random() * 4 + 1,
-          speedY: Math.random() * 1.5 + 0.5,
-          opacity: Math.random() * 0.6 + 0.2
+          radius: Math.random() * 3 + 1,
+          speedY: Math.random() * 1.2 + 0.4,
+          opacity: Math.random() * 0.5 + 0.2
         });
       }
 
-      function animateParticles() {
+      function animate() {
         ctx.clearRect(0, 0, width, height);
         ctx.fillStyle = '#38bdf8';
-
         particles.forEach(p => {
           p.y -= p.speedY;
           if (p.y < 0) {
@@ -822,12 +742,216 @@
           ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
           ctx.fill();
         });
-
-        requestAnimationFrame(animateParticles);
+        requestAnimationFrame(animate);
       }
-      animateParticles();
+      animate();
+    })();
 
-      // Scroll Complexity Morphing
+    // 2. REALISTIC 3D ENERGY DRINK CAN WITH WATER DROPLETS & LOGO (THREE.JS)
+    (function initThreeCan() {
+      const canvas = document.getElementById('three-can-canvas');
+      const wrapper = document.getElementById('three-can-wrapper');
+      if (!canvas || !wrapper || typeof THREE === 'undefined') return;
+
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(45, wrapper.offsetWidth / wrapper.offsetHeight, 0.1, 1000);
+      camera.position.set(0, 0, 7.5);
+
+      const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true, powerPreference: "high-performance" });
+      renderer.setSize(wrapper.offsetWidth, wrapper.offsetHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      // Studio Metallic Lighting
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
+      scene.add(ambientLight);
+
+      const keyLight = new THREE.DirectionalLight(0xffffff, 1.6);
+      keyLight.position.set(5, 5, 7);
+      scene.add(keyLight);
+
+      const fillLight = new THREE.DirectionalLight(0x38bdf8, 1.2);
+      fillLight.position.set(-5, 0, -3);
+      scene.add(fillLight);
+
+      const rimLight = new THREE.DirectionalLight(0x1a73e8, 2.0);
+      rimLight.position.set(0, 8, -5);
+      scene.add(rimLight);
+
+      // Procedural Metallic Texture Canvas (1024x1024)
+      const texCanvas = document.createElement('canvas');
+      texCanvas.width = 1024;
+      texCanvas.height = 1024;
+      const ctx = texCanvas.getContext('2d');
+
+      // Metallic Blue Brushed Gradient
+      const bgGrad = ctx.createLinearGradient(0, 0, 1024, 0);
+      bgGrad.addColorStop(0, '#0a2366');
+      bgGrad.addColorStop(0.2, '#1a73e8');
+      bgGrad.addColorStop(0.5, '#38bdf8');
+      bgGrad.addColorStop(0.8, '#1557b0');
+      bgGrad.addColorStop(1, '#0a2366');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, 1024, 1024);
+
+      // Brushed texture lines
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.04)';
+      for (let i = 0; i < 1024; i += 4) {
+        ctx.fillRect(i, 0, 2, 1024);
+      }
+
+      // Silver Metallic Bands Top & Bottom
+      const silverGrad = ctx.createLinearGradient(0, 0, 1024, 0);
+      silverGrad.addColorStop(0, '#8899a6');
+      silverGrad.addColorStop(0.5, '#ffffff');
+      silverGrad.addColorStop(1, '#667788');
+      ctx.fillStyle = silverGrad;
+      ctx.fillRect(0, 0, 1024, 50);
+      ctx.fillRect(0, 974, 1024, 50);
+
+      // Zero Sugar Pill Badge
+      ctx.fillStyle = '#06132b';
+      ctx.beginPath();
+      ctx.roundRect(512 - 140, 240, 280, 48, 24);
+      ctx.fill();
+      ctx.strokeStyle = '#38bdf8';
+      ctx.lineWidth = 3;
+      ctx.stroke();
+
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = 'bold 22px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('ZERO SUGAR • 355 ML', 512, 272);
+
+      // Can Headline Branding
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '900 76px "Plus Jakarta Sans", sans-serif';
+      ctx.shadowColor = 'rgba(0, 0, 0, 0.6)';
+      ctx.shadowBlur = 15;
+      ctx.fillText('FEZHANS', 512, 375);
+      
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = '800 52px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('BLUE ALCHEMY', 512, 435);
+
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+      ctx.font = 'bold 24px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('HYPER-HYDRATION ENERGY', 512, 480);
+      ctx.shadowBlur = 0;
+
+      // Draw Fezhans Logo image onto Texture
+      const logoImg = new Image();
+      logoImg.src = 'images/fezhans-logo.png';
+      logoImg.onload = () => {
+        ctx.drawImage(logoImg, 512 - 90, 515, 180, 180);
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '700 24px "Plus Jakarta Sans", sans-serif';
+        ctx.fillText('DIGITAL ENERGY FORMULA', 512, 735);
+        
+        ctx.fillStyle = '#38bdf8';
+        ctx.font = 'bold 18px "Plus Jakarta Sans", sans-serif';
+        ctx.fillText('★ 100% PERFORMANCE GUARANTEED ★', 512, 775);
+
+        canMaterial.map.needsUpdate = true;
+      };
+
+      // Create Bump Map Canvas for REALISTIC WATER DROPLETS
+      const bumpCanvas = document.createElement('canvas');
+      bumpCanvas.width = 1024;
+      bumpCanvas.height = 1024;
+      const bCtx = bumpCanvas.getContext('2d');
+      bCtx.fillStyle = '#808080';
+      bCtx.fillRect(0, 0, 1024, 1024);
+
+      // Draw 500 Scattered Condensation Water Droplets with Specular Highlights
+      for (let i = 0; i < 500; i++) {
+        const dropX = Math.random() * 1024;
+        const dropY = Math.random() * 900 + 50;
+        const dropR = Math.random() * 7.5 + 2.5;
+
+        // Height profile for bump map
+        const radGrad = bCtx.createRadialGradient(dropX - dropR*0.3, dropY - dropR*0.3, dropR*0.1, dropX, dropY, dropR);
+        radGrad.addColorStop(0, '#ffffff');
+        radGrad.addColorStop(0.7, '#a0a0a0');
+        radGrad.addColorStop(1, '#404040');
+
+        bCtx.fillStyle = radGrad;
+        bCtx.beginPath();
+        bCtx.arc(dropX, dropY, dropR, 0, Math.PI * 2);
+        bCtx.fill();
+
+        // Glistening Droplets on Diffuse Color Texture
+        const dGrad = ctx.createRadialGradient(dropX - dropR*0.3, dropY - dropR*0.3, dropR*0.1, dropX, dropY, dropR);
+        dGrad.addColorStop(0, 'rgba(255, 255, 255, 0.85)');
+        dGrad.addColorStop(0.3, 'rgba(255, 255, 255, 0.35)');
+        dGrad.addColorStop(0.8, 'rgba(0, 0, 0, 0.25)');
+        dGrad.addColorStop(1, 'rgba(0, 0, 0, 0.5)');
+        
+        ctx.fillStyle = dGrad;
+        ctx.beginPath();
+        ctx.arc(dropX, dropY, dropR, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      const canTexture = new THREE.CanvasTexture(texCanvas);
+      const bumpTexture = new THREE.CanvasTexture(bumpCanvas);
+
+      // Build 3D Can Mesh Assembly
+      const canGroup = new THREE.Group();
+
+      // Main Cylinder Body
+      const bodyGeo = new THREE.CylinderGeometry(1.35, 1.35, 4.4, 64, 1, true);
+      const canMaterial = new THREE.MeshStandardMaterial({
+        map: canTexture,
+        bumpMap: bumpTexture,
+        bumpScale: 0.08,
+        metalness: 0.85,
+        roughness: 0.22,
+      });
+      const bodyMesh = new THREE.Mesh(bodyGeo, canMaterial);
+      canGroup.add(bodyMesh);
+
+      // Silver Metallic Top Rim Bevel
+      const metalMat = new THREE.MeshStandardMaterial({
+        color: 0xdce5ed,
+        metalness: 0.95,
+        roughness: 0.15,
+      });
+
+      const topRimGeo = new THREE.CylinderGeometry(1.35, 1.25, 0.25, 64);
+      const topRim = new THREE.Mesh(topRimGeo, metalMat);
+      topRim.position.y = 2.325;
+      canGroup.add(topRim);
+
+      // Can Top Lid Cap
+      const lidGeo = new THREE.CylinderGeometry(1.25, 1.25, 0.05, 64);
+      const lid = new THREE.Mesh(lidGeo, metalMat);
+      lid.position.y = 2.45;
+      canGroup.add(lid);
+
+      // Can Stay-Tab / Pull-Tab
+      const tabGeo = new THREE.BoxGeometry(0.35, 0.03, 0.7);
+      const tab = new THREE.Mesh(tabGeo, metalMat);
+      tab.position.set(0, 2.48, 0.3);
+      tab.rotation.x = -0.05;
+      canGroup.add(tab);
+
+      // Silver Metallic Bottom Base Ring
+      const bottomRimGeo = new THREE.CylinderGeometry(1.25, 1.35, 0.25, 64);
+      const bottomRim = new THREE.Mesh(bottomRimGeo, metalMat);
+      bottomRim.position.y = -2.325;
+      canGroup.add(bottomRim);
+
+      scene.add(canGroup);
+
+      // Initial 3D tilt angle
+      canGroup.rotation.x = 0.15;
+      canGroup.rotation.z = -0.06;
+
+      // Scroll 360-degree Spin Listener
+      let targetRotationY = 0;
+      let baseRotationY = 0;
+
       window.addEventListener('scroll', () => {
         const section = document.getElementById('drink-experience');
         if (!section) return;
@@ -835,67 +959,67 @@
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
 
-        let progress = 0;
         if (rect.top <= windowHeight && rect.bottom >= 0) {
           const total = windowHeight + rect.height;
-          const current = windowHeight - rect.top;
-          progress = Math.min(Math.max(current / total, 0), 1);
-        }
+          const progress = Math.min(Math.max((windowHeight - rect.top) / total, 0), 1);
+          
+          // Rotates 3 full 360-degree turns as user scrolls through the section
+          targetRotationY = progress * Math.PI * 6;
 
-        const complexityVal = Math.round(15 + progress * 85);
-        
-        const compText = document.getElementById('scroll-complexity-text');
-        const compPct = document.getElementById('complexity-percentage');
-        const compBar = document.getElementById('complexity-bar');
-        const canComp = document.getElementById('can-complexity-stat');
-        const statCarbon = document.getElementById('stat-carbonation');
-        const statIon = document.getElementById('stat-ion');
-        const statElectro = document.getElementById('stat-electrolytes');
-
-        if (compPct) compPct.innerText = complexityVal + '%';
-        if (canComp) canComp.innerText = complexityVal + '%';
-        if (compBar) compBar.style.width = complexityVal + '%';
-
-        if (statCarbon) statCarbon.innerText = (2.4 + progress * 3.1).toFixed(1) + ' ATM';
-        if (statIon) statIon.innerText = (98.4 + progress * 1.5).toFixed(1) + '%';
-        if (statElectro) statElectro.innerText = Math.round(1450 + progress * 2400) + ' mg';
-
-        if (compText) {
-          if (complexityVal < 35) {
-            compText.innerText = "YOU SCROLL DOWN (LEVEL 1)";
-          } else if (complexityVal < 65) {
-            compText.innerText = "QUANTUM LIQUID IGNITION (LEVEL 2)";
-          } else if (complexityVal < 85) {
-            compText.innerText = "MOLECULAR FLAVOR FUSION (LEVEL 3)";
-          } else {
-            compText.innerText = "MAXIMUM HYPER-DRIVE (ULTIMATE)";
+          // Dynamically update text highlight
+          const textEl = document.getElementById('scroll-complexity-text');
+          if (textEl) {
+            if (progress < 0.3) textEl.innerText = "YOU SCROLL DOWN (LEVEL 1)";
+            else if (progress < 0.7) textEl.innerText = "COLD CONDENSATION MATRIX (LEVEL 2)";
+            else textEl.innerText = "MAXIMUM DIGITAL ENERGY (ULTIMATE)";
           }
         }
-
-        const can = document.getElementById('can-container');
-        if (can) {
-          const rotY = (progress - 0.5) * 35;
-          can.style.transform = `perspective(1000px) rotateY(${rotY}deg) scale(${1 + progress * 0.05})`;
-        }
       });
-    })();
 
-    function setDrinkFlavor(flavor) {
-      const label = document.getElementById('can-flavor-label');
-      const container = document.getElementById('can-container');
-      if (!label) return;
+      // Pointer/Mouse Click & Drag to Rotate 360°
+      let isDragging = false;
+      let previousMouseX = 0;
 
-      if (flavor === 'blue') {
-        label.innerText = 'NEON BLUEBERRY';
-        if (container) container.style.borderColor = 'rgba(56, 189, 248, 0.5)';
-      } else if (flavor === 'citrus') {
-        label.innerText = 'QUANTUM CITRUS';
-        if (container) container.style.borderColor = 'rgba(250, 204, 21, 0.5)';
-      } else if (flavor === 'cyber') {
-        label.innerText = 'ELECTRIC CYBERBERRY';
-        if (container) container.style.borderColor = 'rgba(236, 72, 153, 0.5)';
+      wrapper.addEventListener('pointerdown', (e) => {
+        isDragging = true;
+        previousMouseX = e.clientX;
+      });
+
+      window.addEventListener('pointermove', (e) => {
+        if (!isDragging) return;
+        const deltaX = e.clientX - previousMouseX;
+        baseRotationY += deltaX * 0.01;
+        previousMouseX = e.clientX;
+      });
+
+      window.addEventListener('pointerup', () => isDragging = false);
+
+      // Render Loop with Spring Physics & Floating Animation
+      const clock = new THREE.Clock();
+
+      function animate() {
+        requestAnimationFrame(animate);
+        const elapsedTime = clock.getElapsedTime();
+
+        // Smooth rotation interpolation
+        canGroup.rotation.y += (targetRotationY + baseRotationY - canGroup.rotation.y) * 0.08;
+
+        // Gentle floating vertical motion
+        canGroup.position.y = Math.sin(elapsedTime * 2) * 0.12;
+
+        renderer.render(scene, camera);
       }
-    }
+      animate();
+
+      // Responsive Window Resize
+      window.addEventListener('resize', () => {
+        if (!wrapper || !renderer || !camera) return;
+        camera.aspect = wrapper.offsetWidth / wrapper.offsetHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(wrapper.offsetWidth, wrapper.offsetHeight);
+      });
+
+    })();
   </script>
 </body>
 </html>
