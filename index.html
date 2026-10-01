@@ -747,8 +747,8 @@
       animate();
     })();
 
-    // 2. REALISTIC 3D GOAT HEAD LOGO EMBLEM WITH WATER DROPLETS (THREE.JS)
-    (function initThreeGoat() {
+    // 2. REALISTIC 3D STANDALONE GOAT HEAD LOGO MODEL (THREE.JS - NO WATER DROPLETS)
+    (function initThreeGoatHead() {
       const canvas = document.getElementById('three-can-canvas');
       const wrapper = document.getElementById('three-can-wrapper');
       if (!canvas || !wrapper || typeof THREE === 'undefined') return;
@@ -761,170 +761,91 @@
       renderer.setSize(wrapper.offsetWidth, wrapper.offsetHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-      // Studio Metallic & Cyber Lighting
-      const ambientLight = new THREE.AmbientLight(0xffffff, 0.85);
+      // Studio Cyber & Specular Lighting
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.9);
       scene.add(ambientLight);
 
-      const keyLight = new THREE.DirectionalLight(0xffffff, 1.8);
+      const keyLight = new THREE.DirectionalLight(0xffffff, 2.0);
       keyLight.position.set(5, 5, 7);
       scene.add(keyLight);
 
-      const fillLight = new THREE.DirectionalLight(0x38bdf8, 1.4);
-      fillLight.position.set(-5, 0, -3);
+      const fillLight = new THREE.DirectionalLight(0x38bdf8, 1.8);
+      fillLight.position.set(-5, -2, 3);
       scene.add(fillLight);
 
-      const rimLight = new THREE.DirectionalLight(0x1a73e8, 2.2);
-      rimLight.position.set(0, 8, -5);
+      const rimLight = new THREE.PointLight(0x1a73e8, 3.0, 15);
+      rimLight.position.set(0, 0, -2);
       scene.add(rimLight);
 
-      // Procedural 2D Texture Canvas for Goat Head Logo Emblem (1024x1024)
-      const texCanvas = document.createElement('canvas');
-      texCanvas.width = 1024;
-      texCanvas.height = 1024;
-      const ctx = texCanvas.getContext('2d');
+      // Eye Glow Light
+      const eyeLight = new THREE.PointLight(0x38bdf8, 2.5, 8);
+      eyeLight.position.set(0, 0.5, 1.5);
+      scene.add(eyeLight);
 
-      // Metallic Royal Blue Radial Gradient Background
-      const bgGrad = ctx.createRadialGradient(512, 512, 50, 512, 512, 512);
-      bgGrad.addColorStop(0, '#38bdf8');
-      bgGrad.addColorStop(0.35, '#1a73e8');
-      bgGrad.addColorStop(0.7, '#0f2b7a');
-      bgGrad.addColorStop(1, '#051236');
-      ctx.fillStyle = bgGrad;
-      ctx.fillRect(0, 0, 1024, 1024);
+      // Create 3D Volumetric Goat Head Group
+      const goatHeadGroup = new THREE.Group();
 
-      // Outer Metallic Rim Rings
-      ctx.strokeStyle = '#ffffff';
-      ctx.lineWidth = 12;
-      ctx.beginPath();
-      ctx.arc(512, 512, 480, 0, Math.PI * 2);
-      ctx.stroke();
+      // Load Exact Uploaded Goat Head Logo Texture
+      const textureLoader = new THREE.TextureLoader();
+      textureLoader.load('images/goat-head-logo.png', (goatTex) => {
+        goatTex.colorSpace = THREE.SRGBColorSpace;
 
-      ctx.strokeStyle = '#38bdf8';
-      ctx.lineWidth = 6;
-      ctx.beginPath();
-      ctx.arc(512, 512, 460, 0, Math.PI * 2);
-      ctx.stroke();
-
-      // Fezhans Typography Arc / Crest
-      ctx.textAlign = 'center';
-      ctx.fillStyle = '#ffffff';
-      ctx.font = '900 48px "Plus Jakarta Sans", sans-serif';
-      ctx.shadowColor = 'rgba(0, 0, 0, 0.7)';
-      ctx.shadowBlur = 12;
-      ctx.fillText('FEZHANS DIGITAL', 512, 180);
-      
-      ctx.fillStyle = '#38bdf8';
-      ctx.font = '800 32px "Plus Jakarta Sans", sans-serif';
-      ctx.fillText('★ HIGH PERFORMANCE MATRIX ★', 512, 230);
-      ctx.shadowBlur = 0;
-
-      // Draw Massive Fezhans Goat Head Logo in Center
-      const logoImg = new Image();
-      logoImg.src = 'images/fezhans-logo.png';
-      logoImg.onload = () => {
-        // Render Fezhans Goat Head Logo prominently
-        ctx.drawImage(logoImg, 512 - 220, 512 - 180, 440, 440);
-
-        ctx.fillStyle = '#ffffff';
-        ctx.font = '800 36px "Plus Jakarta Sans", sans-serif';
-        ctx.fillText('FEZHANS AGENCY', 512, 850);
-
-        goatMaterial.map.needsUpdate = true;
-      };
-
-      // Create Bump Map Canvas for REALISTIC WATER DROPLETS
-      const bumpCanvas = document.createElement('canvas');
-      bumpCanvas.width = 1024;
-      bumpCanvas.height = 1024;
-      const bCtx = bumpCanvas.getContext('2d');
-      bCtx.fillStyle = '#808080';
-      bCtx.fillRect(0, 0, 1024, 1024);
-
-      // Draw 500+ Scattered Water Droplets with 3D Specular Highlights
-      for (let i = 0; i < 500; i++) {
-        const dropX = Math.random() * 900 + 62;
-        const dropY = Math.random() * 900 + 62;
+        const planeGeo = new THREE.PlaneGeometry(4.8, 4.8);
         
-        // Only keep droplets inside circle
-        const distFromCenter = Math.hypot(dropX - 512, dropY - 512);
-        if (distFromCenter > 470) continue;
+        // Multi-Layer Volumetric 3D Depth Planes
+        const layersCount = 12;
+        const depthSpan = 0.35;
 
-        const dropR = Math.random() * 8 + 3;
+        for (let i = 0; i < layersCount; i++) {
+          const zOffset = (i / (layersCount - 1) - 0.5) * depthSpan;
+          
+          const mat = new THREE.MeshStandardMaterial({
+            map: goatTex,
+            transparent: true,
+            alphaTest: 0.08,
+            metalness: 0.9,
+            roughness: 0.15,
+            side: THREE.DoubleSide,
+            depthWrite: true,
+          });
 
-        // Bump height map gradient
-        const radGrad = bCtx.createRadialGradient(dropX - dropR*0.3, dropY - dropR*0.3, dropR*0.1, dropX, dropY, dropR);
-        radGrad.addColorStop(0, '#ffffff');
-        radGrad.addColorStop(0.7, '#a0a0a0');
-        radGrad.addColorStop(1, '#404040');
+          // Slight brightness gradient across depth layers for 3D metallic shading
+          if (i === 0 || i === layersCount - 1) {
+            mat.metalness = 0.95;
+            mat.roughness = 0.1;
+          }
 
-        bCtx.fillStyle = radGrad;
-        bCtx.beginPath();
-        bCtx.arc(dropX, dropY, dropR, 0, Math.PI * 2);
-        bCtx.fill();
+          const layerMesh = new THREE.Mesh(planeGeo, mat);
+          layerMesh.position.z = zOffset;
+          goatHeadGroup.add(layerMesh);
+        }
 
-        // Color texture glistening wet droplets
-        const dGrad = ctx.createRadialGradient(dropX - dropR*0.3, dropY - dropR*0.3, dropR*0.1, dropX, dropY, dropR);
-        dGrad.addColorStop(0, 'rgba(255, 255, 255, 0.9)');
-        dGrad.addColorStop(0.3, 'rgba(255, 255, 255, 0.4)');
-        dGrad.addColorStop(0.8, 'rgba(0, 0, 0, 0.2)');
-        dGrad.addColorStop(1, 'rgba(0, 0, 0, 0.5)');
-        
-        ctx.fillStyle = dGrad;
-        ctx.beginPath();
-        ctx.arc(dropX, dropY, dropR, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      const goatTexture = new THREE.CanvasTexture(texCanvas);
-      const bumpTexture = new THREE.CanvasTexture(bumpCanvas);
-
-      // 3D Medallion Assembly (Thick metallic 3D shield disc)
-      const goatGroup = new THREE.Group();
-
-      // Disc Medallion Body Geometry
-      const discGeo = new THREE.CylinderGeometry(2.3, 2.3, 0.4, 64);
-      
-      // Face material (front & back with texture map & droplet bump map)
-      const goatMaterial = new THREE.MeshStandardMaterial({
-        map: goatTexture,
-        bumpMap: bumpTexture,
-        bumpScale: 0.08,
-        metalness: 0.85,
-        roughness: 0.2,
+        // Add 3D Side Edge Framing Mesh for Volumetric Solidity
+        const boxGeo = new THREE.BoxGeometry(4.6, 4.6, depthSpan);
+        const edgeMat = new THREE.MeshStandardMaterial({
+          color: 0x1a73e8,
+          metalness: 0.9,
+          roughness: 0.2,
+          transparent: true,
+          opacity: 0.15
+        });
+        const edgeMesh = new THREE.Mesh(boxGeo, edgeMat);
+        goatHeadGroup.add(edgeMesh);
       });
 
-      // Metallic Side Rim Material
-      const rimMaterial = new THREE.MeshStandardMaterial({
-        color: 0x38bdf8,
-        metalness: 0.95,
-        roughness: 0.15,
-      });
-
-      // Apply materials: [Side, Top Face, Bottom Face]
-      const discMaterials = [rimMaterial, goatMaterial, goatMaterial];
-      const discMesh = new THREE.Mesh(discGeo, discMaterials);
-      
-      // Orient disc so face points forward
-      discMesh.rotation.x = Math.PI / 2;
-      goatGroup.add(discMesh);
-
-      // 3D Orbital Cyber Rings
-      const ring1Geo = new THREE.TorusGeometry(3.0, 0.04, 16, 100);
+      // 3D Orbital Cyber Rings floating around the Goat Head
+      const ring1Geo = new THREE.TorusGeometry(3.1, 0.035, 16, 100);
       const ring1Mat = new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.6 });
       const ring1 = new THREE.Mesh(ring1Geo, ring1Mat);
-      goatGroup.add(ring1);
+      goatHeadGroup.add(ring1);
 
-      const ring2Geo = new THREE.TorusGeometry(3.4, 0.02, 16, 100);
+      const ring2Geo = new THREE.TorusGeometry(3.5, 0.02, 16, 100);
       const ring2Mat = new THREE.MeshBasicMaterial({ color: 0x1a73e8, transparent: true, opacity: 0.4 });
       const ring2 = new THREE.Mesh(ring2Geo, ring2Mat);
-      ring2.rotation.x = 1.2;
-      goatGroup.add(ring2);
+      ring2.rotation.x = 1.3;
+      goatHeadGroup.add(ring2);
 
-      scene.add(goatGroup);
-
-      // Initial 3D tilt for depth
-      goatGroup.rotation.x = 0.2;
-      goatGroup.rotation.z = -0.05;
+      scene.add(goatHeadGroup);
 
       // Scroll 360-Degree Spinning Listener
       let targetRotationY = 0;
@@ -971,7 +892,7 @@
 
       window.addEventListener('pointerup', () => isDragging = false);
 
-      // Render Loop with Spring Physics & Floating Motion
+      // Render Loop with Dynamic 3D Floating & Spinning Motion
       const clock = new THREE.Clock();
 
       function animate() {
@@ -979,14 +900,17 @@
         const elapsedTime = clock.getElapsedTime();
 
         // Smooth rotation interpolation
-        goatGroup.rotation.y += (targetRotationY + baseRotationY - goatGroup.rotation.y) * 0.08;
+        goatHeadGroup.rotation.y += (targetRotationY + baseRotationY - goatHeadGroup.rotation.y) * 0.08;
 
-        // Rotate orbital rings
-        ring1.rotation.z = elapsedTime * 0.5;
-        ring2.rotation.y = elapsedTime * 0.3;
+        // Dynamic 3D tilt
+        goatHeadGroup.rotation.x = Math.sin(elapsedTime * 1.5) * 0.08;
+
+        // Rotate orbital cyber rings
+        ring1.rotation.z = elapsedTime * 0.6;
+        ring2.rotation.y = elapsedTime * 0.4;
 
         // Gentle floating vertical animation
-        goatGroup.position.y = Math.sin(elapsedTime * 2) * 0.15;
+        goatHeadGroup.position.y = Math.sin(elapsedTime * 2) * 0.15;
 
         renderer.render(scene, camera);
       }
