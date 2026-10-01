@@ -109,7 +109,7 @@
           </div>
         </div>
 
-        <a href="index.html#store" class="text-xs font-extrabold uppercase tracking-wider text-slate-900 hover:text-[#1a73e8] transition">STORE</a>
+        <a href="store.html" class="text-xs font-extrabold uppercase tracking-wider text-slate-900 hover:text-[#1a73e8] transition">STORE</a>
       </nav>
 
       <!-- CTA ACTION BUTTONS -->
@@ -201,21 +201,81 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-      <div class="flex items-center gap-3">
-        <img src="images/fezhans-logo.png" alt="Fezhans Logo" class="w-10 h-10 object-contain">
-        <span class="text-white font-bold text-base">Fezhans Digital Agency</span>
+  <!-- UNIFIED FEZHANS FOOTER -->
+  <footer class="bg-slate-950 text-slate-400 py-16 border-t border-slate-800 text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-8 pb-12 border-b border-slate-800">
+        
+        <!-- Col 1: Brand & Bio -->
+        <div class="col-span-2 space-y-4">
+          <div class="flex items-center gap-3.5">
+            <img src="images/fezhans-logo.png" alt="Fezhans Logo" class="w-12 h-12 sm:w-14 sm:h-14 object-contain">
+            <div class="flex flex-col">
+              <span class="text-2xl sm:text-3xl font-black text-white tracking-tight">Fezhans</span>
+              <span class="text-[11px] font-bold tracking-widest uppercase text-blue-500 -mt-1">Digital Agency</span>
+            </div>
+          </div>
+          <p class="text-xs text-slate-400 leading-relaxed max-w-sm">
+            Fezhans is an elite digital agency providing bespoke website engineering, mobile app development, mobile game studio production, high-ROAS marketing, and NFC Tap hardware products.
+          </p>
+          <div class="text-xs text-slate-500">
+            © 2026 Fezhans Agency Ltd. All rights reserved. Registered in United Kingdom & Global Operations.
+          </div>
+        </div>
+
+        <!-- Col 2: Digital Services -->
+        <div>
+          <h4 class="text-xs font-extrabold text-white uppercase tracking-wider mb-4">Digital Services</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="websites.html" class="hover:text-blue-400 transition flex items-center gap-1.5"><span class="text-blue-500">•</span> Custom Websites</a></li>
+            <li><a href="mobile-apps.html" class="hover:text-blue-400 transition flex items-center gap-1.5"><span class="text-blue-500">•</span> Mobile & Web Apps</a></li>
+            <li><a href="mobile-games.html" class="hover:text-blue-400 transition flex items-center gap-1.5"><span class="text-blue-500">•</span> Mobile Games Studio</a></li>
+            <li><a href="marketing.html" class="hover:text-blue-400 transition flex items-center gap-1.5"><span class="text-blue-500">•</span> Digital Marketing & SEO</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Case Studies & Journal -->
+        <div>
+          <h4 class="text-xs font-extrabold text-white uppercase tracking-wider mb-4">Case Studies & Journal</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="case-study-website.html" class="hover:text-blue-400 transition">Vanguard FinTech (310% Conversion)</a></li>
+            <li><a href="case-study-app.html" class="hover:text-blue-400 transition">Space Alchemy Mobile App</a></li>
+            <li><a href="case-study-game.html" class="hover:text-blue-400 transition">Unity 3D Mobile Physics Engine</a></li>
+            <li><a href="case-study-marketing.html" class="hover:text-blue-400 transition">Apex Luxury Retail (+$3.6M Scale)</a></li>
+            <li><a href="index.html#blog" class="hover:text-blue-400 transition font-bold text-blue-400">View All 10k Blog Deep Dives →</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Store & Hardware -->
+        <div>
+          <h4 class="text-xs font-extrabold text-white uppercase tracking-wider mb-4">NFC Store & Hardware</h4>
+          <ul class="space-y-2.5 text-xs">
+            <li><a href="store.html" class="hover:text-blue-400 transition flex items-center justify-between">Google NFC Scan Sticker <span class="text-blue-400 font-bold">£19.99</span></a></li>
+            <li><a href="store.html" class="hover:text-blue-400 transition flex items-center justify-between">Google Review NFC Stand <span class="text-blue-400 font-bold">£19.99</span></a></li>
+            <li><a href="store.html" class="hover:text-blue-400 transition flex items-center justify-between">TikTok NFC Stand <span class="text-blue-400 font-bold">£19.99</span></a></li>
+            <li><a href="store.html" class="hover:text-blue-400 transition flex items-center justify-between">Instagram NFC Stand <span class="text-blue-400 font-bold">£19.99</span></a></li>
+            <li><a href="store.html" class="hover:text-blue-400 transition font-bold text-blue-400">Visit Fezhans Store →</a></li>
+          </ul>
+        </div>
+
       </div>
-      <div class="flex flex-wrap gap-6 font-semibold">
-        <a href="index.html" class="hover:text-white">Home</a>
-        <a href="websites.html" class="text-white">Websites</a>
-        <a href="mobile-apps.html" class="hover:text-white">Mobile Apps</a>
-        <a href="mobile-games.html" class="hover:text-white">Mobile Games</a>
-        <a href="marketing.html" class="hover:text-white">Digital Marketing</a>
+
+      <!-- Footer Bottom -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div class="flex items-center gap-4 flex-wrap">
+          <a href="index.html" class="hover:text-white transition">Home</a>
+          <a href="websites.html" class="hover:text-white transition">Websites</a>
+          <a href="mobile-apps.html" class="hover:text-white transition">Mobile Apps</a>
+          <a href="mobile-games.html" class="hover:text-white transition">Mobile Games</a>
+          <a href="marketing.html" class="hover:text-white transition">Marketing</a>
+          <a href="store.html" class="text-blue-400 font-bold hover:text-white transition">Store (£19.99)</a>
+        </div>
+        <div class="flex items-center gap-4">
+          <button onclick="openConsultationModal('Websites')" class="text-blue-400 hover:underline font-bold">Book Strategy Consultation</button>
+          <span>•</span>
+          <span class="text-slate-400">Privacy Policy & Terms</span>
+        </div>
       </div>
-      <p>© 2026 Fezhans Limited. All rights reserved.</p>
     </div>
   </footer>
 
