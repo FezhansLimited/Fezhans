@@ -6,7 +6,6 @@ let heroInterval;
 
 document.addEventListener('DOMContentLoaded', () => {
   startHeroAutoPlay();
-  updateRoiCalc();
 });
 
 // HERO CAROUSEL LOGIC
@@ -84,34 +83,6 @@ function toggleMobileMenu() {
   if (menu) {
     menu.classList.toggle('hidden');
   }
-}
-
-// INTERACTIVE ROI CALCULATOR
-function updateRoiCalc() {
-  const visitors = parseFloat(document.getElementById('calc-visitors').value) || 25000;
-  const aov = parseFloat(document.getElementById('calc-aov').value) || 150;
-  const currentConv = parseFloat(document.getElementById('calc-conv').value) || 1.2;
-
-  // Format Labels
-  document.getElementById('calc-visitors-val').innerText = visitors.toLocaleString();
-  document.getElementById('calc-aov-val').innerText = '$' + aov.toLocaleString();
-  document.getElementById('calc-conv-val').innerText = currentConv.toFixed(1) + '%';
-
-  // Math Calculations
-  const currentMonthlyOrders = (visitors * (currentConv / 100));
-  const currentMonthlyRev = currentMonthlyOrders * aov;
-
-  // Fezhans estimated conversion rate
-  const fezhansConvRate = Math.min(currentConv * 2.2, 4.5);
-  const fezhansMonthlyOrders = (visitors * (fezhansConvRate / 100));
-  const fezhansMonthlyRev = fezhansMonthlyOrders * aov;
-
-  const additionalRev = fezhansMonthlyRev - currentMonthlyRev;
-
-  // Render Results
-  document.getElementById('res-current-rev').innerText = '$' + Math.round(currentMonthlyRev).toLocaleString();
-  document.getElementById('res-fezhans-rev').innerText = '$' + Math.round(fezhansMonthlyRev).toLocaleString();
-  document.getElementById('res-additional').innerText = '+$' + Math.round(additionalRev).toLocaleString() + ' / mo';
 }
 
 // PORTFOLIO FILTER TABS (NO PILLS)
