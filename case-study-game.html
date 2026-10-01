@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Development Case Study | Fezhans Digital Agency</title>
+  <meta name="description" content="In-depth case study on 3D Unity mobile game development, multiplayer cloud backends, and monetization strategy by Fezhans.">
+  <link rel="icon" type="image/png" href="images/fezhans-logo.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- NAVIGATION HEADER -->
+  <header class="bg-white sticky top-0 z-40 border-b border-slate-200 shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex flex-col sm:flex-row items-center justify-between gap-3 sm:gap-0 py-2 sm:py-0">
+      
+      <a href="index.html" class="flex flex-col sm:flex-row items-center gap-3 group text-center sm:text-left">
+        <img src="images/fezhans-logo.png" alt="Fezhans Logo" class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 transition duration-200">
+        <div class="flex flex-col items-center sm:items-start">
+          <span class="text-2xl sm:text-3xl font-black text-slate-900 group-hover:text-[#1a73e8] transition duration-200 tracking-tight">Fezhans</span>
+          <span class="text-[10px] font-bold tracking-widest uppercase text-[#1a73e8] -mt-1">Digital Agency</span>
+        </div>
+      </a>
+
+      <!-- DESKTOP NAV -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <div class="relative group py-4">
+          <button class="flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-slate-900 hover:text-[#1a73e8] transition">
+            SERVICES
+            <svg class="w-4 h-4 text-slate-400 group-hover:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-slate-100 p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+            <a href="websites.html" class="block p-2 text-xs font-bold text-slate-900 hover:bg-blue-50 rounded">CUSTOM WEBSITES</a>
+            <a href="mobile-apps.html" class="block p-2 text-xs font-bold text-slate-900 hover:bg-blue-50 rounded">WEB & MOBILE APPS</a>
+            <a href="mobile-games.html" class="block p-2 text-xs font-bold text-slate-900 hover:bg-blue-50 rounded">MOBILE GAMES</a>
+            <a href="marketing.html" class="block p-2 text-xs font-bold text-slate-900 hover:bg-blue-50 rounded">DIGITAL MARKETING</a>
+          </div>
+        </div>
+
+        <div class="relative group py-4">
+          <button class="flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-[#1a73e8]">
+            CASE STUDIES
+            <svg class="w-4 h-4 text-[#1a73e8] group-hover:rotate-180 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+          </button>
+          <div class="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-slate-100 p-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition">
+            <a href="case-study-website.html" class="block p-2 text-xs font-bold text-slate-900 hover:bg-blue-50 rounded">WEBSITE DEVELOPMENT</a>
+            <a href="case-study-app.html" class="block p-2 text-xs font-bold text-slate-900 hover:bg-blue-50 rounded">APP DEVELOPMENT</a>
+            <a href="case-study-game.html" class="block p-2 text-xs font-bold text-[#1a73e8] bg-blue-50 rounded">GAME DEVELOPMENT</a>
+            <a href="case-study-marketing.html" class="block p-2 text-xs font-bold text-slate-900 hover:bg-blue-50 rounded">DIGITAL MARKETING</a>
+          </div>
+        </div>
+
+        <a href="#store" class="text-xs font-black uppercase tracking-wider text-slate-900 hover:text-[#1a73e8] transition">STORE</a>
+      </nav>
+
+      <!-- CTA BUTTONS -->
+      <div class="hidden sm:flex items-center gap-4">
+        <button onclick="alert('Contacting Fezhans...')" class="px-5 py-2.5 rounded-lg border border-slate-300 text-slate-900 font-black uppercase tracking-wider text-xs hover:border-[#1a73e8] hover:text-[#1a73e8] transition bg-white shadow-xs">
+          SIGN IN
+        </button>
+        <button onclick="alert('Starting Project...')" class="px-6 py-2.5 rounded-lg bg-[#1a73e8] hover:bg-[#1557b0] text-white font-black uppercase tracking-wider text-xs shadow-md transition">
+          GET STARTED
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO CASE STUDY HEADER -->
+  <section class="bg-slate-950 text-white py-20 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 text-center space-y-6 relative z-10">
+      <span class="inline-block px-4 py-1.5 rounded-md bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-black uppercase tracking-widest">
+        Game Engineering Case Study #003
+      </span>
+      <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight">
+        Hyper-Casual to Mid-Core 3D Mobile Game Launch
+      </h1>
+      <p class="text-slate-300 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
+        Engineering a 60 FPS Unity 3D title with real-time Photon multiplayer, rewarded video ad integration, and 1.2M downloads in 90 days.
+      </p>
+
+      <!-- METRICS GRID -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-8 max-w-4xl mx-auto">
+        <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800">
+          <p class="text-3xl sm:text-4xl font-black text-[#1a73e8]">1.2M+</p>
+          <p class="text-xs text-slate-400 uppercase font-bold tracking-wider mt-1">Total Downloads</p>
+        </div>
+        <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800">
+          <p class="text-3xl sm:text-4xl font-black text-cyan-400">42 Min</p>
+          <p class="text-xs text-slate-400 uppercase font-bold tracking-wider mt-1">Daily Average Session</p>
+        </div>
+        <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800">
+          <p class="text-3xl sm:text-4xl font-black text-blue-400">$3.80</p>
+          <p class="text-xs text-slate-400 uppercase font-bold tracking-wider mt-1">Average Revenue Per User</p>
+        </div>
+        <div class="p-6 bg-slate-900 rounded-2xl border border-slate-800">
+          <p class="text-3xl sm:text-4xl font-black text-emerald-400">D30 18%</p>
+          <p class="text-xs text-slate-400 uppercase font-bold tracking-wider mt-1">Player Retention Rate</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEEP DETAILED CASE STUDY BODY CONTENT -->
+  <article class="max-w-4xl mx-auto px-4 py-16 space-y-12 text-slate-800 leading-relaxed text-base">
+    
+    <section class="space-y-4">
+      <h2 class="text-3xl font-black text-slate-950 tracking-tight">1. Game Design & Shader Optimization</h2>
+      <p>
+        Fezhans Game Studio designed and rendered full custom 3D low-poly models, custom HLSL shaders, and dynamic lighting rigs optimized to maintain 60 FPS across mid-tier mobile hardware.
+      </p>
+      <p>
+        By utilizing Unity’s Universal Render Pipeline (URP) and custom occlusion culling, memory consumption was kept below 180MB, resulting in near-zero crashes.
+      </p>
+    </section>
+
+    <section class="space-y-4 bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+      <h2 class="text-3xl font-black text-slate-950 tracking-tight">2. Monetization & Live Ops System</h2>
+      <ul class="list-disc pl-6 space-y-2 text-slate-700">
+        <li><strong>Hybrid Monetization:</strong> Seamless combination of In-App Purchases (gems, character skins) & non-intrusive rewarded video ads.</li>
+        <li><strong>Real-Time Leaderboards:</strong> Redis-backed matchmaking infrastructure delivering instant global ranking updates.</li>
+        <li><strong>Weekly Battle Passes:</strong> Automated cloud event updates driving long-term player retention.</li>
+      </ul>
+    </section>
+
+    <section class="space-y-4 bg-blue-50 p-8 rounded-2xl border border-blue-100">
+      <h2 class="text-3xl font-black text-[#1a73e8] tracking-tight">3. Global Launch Success</h2>
+      <p class="text-slate-800">
+        The game achieved #1 Trending Game status on the Google Play Store in 14 countries within 3 weeks of release.
+      </p>
+    </section>
+
+  </article>
+
+  <!-- CTA FOOTER -->
+  <section class="py-16 bg-[#1a73e8] text-white text-center">
+    <h2 class="text-3xl font-extrabold mb-4">Have a mobile game concept you want to build?</h2>
+    <button onclick="alert('Contacting Fezhans...')" class="px-8 py-4 rounded-lg bg-white text-[#1a73e8] font-bold hover:bg-slate-100 transition">
+      Talk to Game Studio Director
+    </button>
+  </section>
+
+  <footer class="bg-slate-950 text-slate-400 py-12 text-xs text-center border-t border-slate-800">
+    <p>© 2026 Fezhans Agency Ltd. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
