@@ -397,7 +397,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- WEBSITES FEATURED SHOWCASE -->
-      <div class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xl mb-12 relative overflow-hidden">
+      <div id="website-expand-card" class="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xl mb-12 relative overflow-hidden transition-all duration-300 ease-out will-change-transform origin-center">
         <div class="max-w-3xl mx-auto text-center mb-8">
           <h2 class="text-3xl sm:text-5xl font-black text-slate-950 tracking-tight">Websites</h2>
           <p class="text-slate-600 text-base sm:text-xl mt-4 font-medium leading-relaxed">
@@ -871,6 +871,47 @@
 
   <!-- 3D ENERGY DRINK CAN WEBGL & SCROLL SPIN SCRIPT -->
   <script>
+    // 0. Scroll-Driven Expansion Animation for Websites Featured Card
+    (function initWebsiteCardScrollExpand() {
+      const card = document.getElementById('website-expand-card');
+      if (!card) return;
+
+      let ticking = false;
+
+      function updateCardScale() {
+        const rect = card.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Calculate progress as card enters/leaves viewport center
+        const elementCenter = rect.top + rect.height / 2;
+        const viewportCenter = windowHeight / 2;
+        const distanceFromCenter = Math.abs(viewportCenter - elementCenter);
+        const maxDistance = windowHeight / 1.1;
+
+        // Progress from 0 (edges/offscreen) to 1 (centered)
+        const progress = Math.max(0, 1 - (distanceFromCenter / maxDistance));
+
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          // Smoothly scale from 0.90 to 1.05 to fill outer grey gaps
+          const scale = 0.90 + (progress * 0.15);
+          const shadowSpread = progress * 35;
+
+          card.style.transform = `scale(${Math.min(scale, 1.05)})`;
+          card.style.boxShadow = `0 ${20 + shadowSpread}px ${40 + shadowSpread}px -10px rgba(26, 115, 232, ${0.10 + progress * 0.15})`;
+        }
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateCardScale);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      updateCardScale();
+    })();
+
     // 1. Background Carbonation Particles
     (function initDrinkBg() {
       const canvas = document.getElementById('drink-bg-canvas');
