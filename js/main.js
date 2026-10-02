@@ -1,4 +1,4 @@
-// Fezhans Agency Interactive JavaScript - Antigravity Blue Theme
+﻿// The GOAT Digital Agency Interactive JavaScript - Antigravity Blue Theme
 
 let currentHeroSlide = 0;
 const totalHeroSlides = 3;
@@ -74,7 +74,7 @@ function dismissTopBar() {
 function handleRegionChange() {
   const select = document.getElementById('country-select');
   const region = select ? select.options[select.selectedIndex].text : 'Selected Region';
-  alert(`Region set to: ${region}. Currency & regional offerings updated for Fezhans.`);
+  alert(`Region set to: ${region}. Currency & regional offerings updated for The GOAT Digital Agency.`);
 }
 
 // MOBILE MENU TOGGLE
