@@ -1,0 +1,6 @@
+# Robots.txt for Fezhans Digital Agency (https://fezhans.com/)
+User-agent: *
+Allow: /
+
+# Sitemap Directive
+Sitemap: https://fezhans.com/sitemap.xml
